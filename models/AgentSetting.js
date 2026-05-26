@@ -36,9 +36,8 @@ const agentSettingSchema = new mongoose.Schema({
 });
 
 // Middleware to update the updatedAt timestamp
-agentSettingSchema.pre('save', function (next) {
+agentSettingSchema.pre('save', function () {
   this.updatedAt = Date.now();
-  next();
 });
 
 module.exports = mongoose.model('AgentSetting', agentSettingSchema);
